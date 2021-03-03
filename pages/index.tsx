@@ -1,3 +1,4 @@
+import Loader from '@/components/Loader';
 import Head from 'next/head';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
 
       <main>
         <h1>CODE</h1>
+        <Loader />
       </main>
     </div>
   );
