@@ -15,10 +15,9 @@ const initialState = {
 
 const UserContext = createContext(initialState);
 
-const UserProvider = ({ children }: { children: ReactNode }) => {
+const useUserData = () => {
   const [username, setUsername] = useState<string | null>();
   const [user] = useAuthState(auth);
-  const value = { user, username };
 
   useEffect(() => {
     let unsubscribe;
@@ -35,7 +34,7 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     return unsubscribe;
   }, [user]);
 
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return { user, username };
 };
 
 export const useUser = () => {
@@ -46,6 +45,12 @@ export const useUser = () => {
   }
 
   return context;
+};
+
+const UserProvider = ({ children }: { children: ReactNode }) => {
+  const value = useUserData();
+
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
 export default UserProvider;
