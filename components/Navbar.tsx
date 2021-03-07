@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useUser } from '@/providers/UserProvider';
+import SignOutButton from './SignOut';
 
 const Navbar = () => {
   const { user, username } = useUser();
@@ -16,9 +17,7 @@ const Navbar = () => {
         {username ? (
           <>
             <li className="push-left">
-              <Link href="/">
-                <button>Sign out</button>
-              </Link>
+              <SignOutButton />
             </li>
             <li>
               <Link href="/admin">

@@ -1,3 +1,4 @@
+import SignOutButton from '@/components/SignOut';
 import { auth, googleOAuthProvider } from '@/lib/firebase';
 import { useUser } from '@/providers/UserProvider';
 
@@ -13,14 +14,6 @@ const SignInButton = () => {
   return (
     <button className="btn-google" onClick={signInWithGoogle}>
       <img src="/google.png" alt="Google Sign In" /> Sign in with Google
-    </button>
-  );
-};
-
-const SignOutButton = () => {
-  return (
-    <button className="btn" onClick={() => auth.signOut()}>
-      Sign Out
     </button>
   );
 };
