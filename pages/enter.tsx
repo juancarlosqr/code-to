@@ -1,4 +1,5 @@
 import { auth, googleOAuthProvider } from '@/lib/firebase';
+import { useUser } from '@/providers/UserProvider';
 
 const UsernameForm = () => {
   return <section>Username</section>;
@@ -25,8 +26,7 @@ const SignOutButton = () => {
 };
 
 const EnterPage = () => {
-  const user = false;
-  const username = false;
+  const { user, username } = useUser();
 
   return (
     <main>

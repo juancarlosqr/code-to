@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import { useUser } from '@/providers/UserProvider';
 
 const Navbar = () => {
-  const user = null;
-  const username = null;
+  const { user, username } = useUser();
 
   return (
     <nav className="navbar">
@@ -17,7 +17,7 @@ const Navbar = () => {
           <>
             <li className="push-left">
               <Link href="/">
-                <button>Log out</button>
+                <button>Sign out</button>
               </Link>
             </li>
             <li>
