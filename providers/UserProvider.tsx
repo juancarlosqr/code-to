@@ -25,7 +25,9 @@ const useUserData = () => {
     if (user) {
       const ref = db.collection('users').doc(user.uid);
       unsubscribe = ref.onSnapshot((doc) => {
-        setUsername(doc.data()?.username);
+        if (doc.exists) {
+          setUsername(doc.data()?.username);
+        }
       });
     } else {
       setUsername(null);

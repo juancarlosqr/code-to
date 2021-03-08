@@ -1,14 +1,11 @@
-import Head from 'next/head';
 import toast from 'react-hot-toast';
 import Loader from '@/components/Loader';
+import Metatags from '@/components/Metatags';
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>CODE</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metatags />
 
       <main>
         <h1>CODE</h1>
