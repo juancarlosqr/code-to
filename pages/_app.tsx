@@ -6,9 +6,9 @@ import '../styles/globals.css';
 function CodeApp({ Component, pageProps }) {
   return (
     <UserProvider>
-      <Toaster position="bottom-center" reverseOrder={false} />
       <Navbar />
       <Component {...pageProps} />
+      <Toaster position="bottom-center" />
     </UserProvider>
   );
 }
