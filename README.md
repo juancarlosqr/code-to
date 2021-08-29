@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Links
+
+- http://localhost:3000
+- https://fireship.io/courses/react-next-firebase/auth-google-signin/
+- https://console.firebase.google.com/u/3/project/code-nextjs/
+
 ## Getting Started
 
 First, run the development server:
