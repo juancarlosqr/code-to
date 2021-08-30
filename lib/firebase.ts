@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/storage';
+import { TSFixMe } from './types';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyASrAX5kGwlQjIRHyvK26DGiEZ7z1AJDE8',
@@ -22,3 +23,30 @@ export const storage = firebase.storage();
 
 export const ts = firebase.firestore.FieldValue.serverTimestamp;
 export const googleOAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+/**
+ * Gets a users/{uid} document with username
+ * @param  {string} username
+ */
+export async function getUserWithUsername(username: string) {
+  const usersRef = db.collection('users');
+  const query = usersRef.where('username', '==', username).limit(1);
+  const userDoc = (await query.get()).docs[0];
+
+  return userDoc;
+}
+
+/**
+ * Converts a firestore document to JSON
+ * @param  {DocumentSnapshot} doc
+ */
+export function postToJSON(doc: TSFixMe) {
+  const data = doc.data();
+
+  return {
+    ...data,
+    // Gotcha! firestore timestamp NOT serializable to JSON. Must convert to milliseconds
+    createdAt: data.createdAt.toMillis(),
+    updatedAt: data.updatedAt.toMillis(),
+  };
+}
