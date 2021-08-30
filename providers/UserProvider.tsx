@@ -15,11 +15,13 @@ const initialState = {
 
 const UserContext = createContext(initialState);
 
+// Custom hook to read  auth record and user profile doc
 const useUserData = () => {
   const [username, setUsername] = useState<string | null>();
   const [user] = useAuthState(auth);
 
   useEffect(() => {
+    // turn off realtime subscription
     let unsubscribe;
 
     if (user) {

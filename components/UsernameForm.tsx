@@ -55,14 +55,14 @@ const UsernameForm = () => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const text = e.currentTarget.value.toLowerCase();
 
-    setValue(text);
-
     if (text.length < USERNAME_MIN_LENGTH) {
+      setValue(text);
       setIsValid(false);
       setLoading(false);
     }
 
     if (USERNAME_RE.test(text)) {
+      setValue(text);
       setIsValid(false);
       setLoading(true);
     }
