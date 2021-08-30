@@ -17,6 +17,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
+export type Timestamp = firebase.firestore.Timestamp;
 export const auth = firebase.auth();
 export const db = firebase.firestore();
 export const storage = firebase.storage();

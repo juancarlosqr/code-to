@@ -1,3 +1,5 @@
+import { Timestamp } from './firebase';
+
 export type TSFixMe = any;
 
 export type PostInterface = {
@@ -7,6 +9,7 @@ export type PostInterface = {
   heartCount: number;
   published: boolean;
   slug: string;
+  createdAt: number | Timestamp;
 };
 
 export type UserInterface = {
