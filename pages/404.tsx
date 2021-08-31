@@ -1,5 +1,5 @@
-import Metatags from '@/components/Metatags';
 import Link from 'next/link';
+import Metatags from '@/components/Metatags';
 
 export default function Custom404() {
   return (

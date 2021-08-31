@@ -1,3 +1,4 @@
+import AuthCheck from '@/components/AuthCheck';
 import { db, ts } from '@/lib/firebase';
 import { useUser } from '@/providers/UserProvider';
 
@@ -31,10 +32,12 @@ const AdminPage = () => {
 
   return (
     <main>
-      <h1>Admin</h1>
-      <section>
-        <button onClick={onClickDummyImport}>Add dummy post data</button>
-      </section>
+      <AuthCheck>
+        <h1>Admin</h1>
+        <section>
+          <button onClick={onClickDummyImport}>Add dummy post data</button>
+        </section>
+      </AuthCheck>
     </main>
   );
 };
