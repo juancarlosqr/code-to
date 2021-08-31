@@ -57,7 +57,7 @@ export default function HomePage(props) {
 
   return (
     <main>
-      <Metatags />
+      <Metatags title="Feed" />
 
       <PostFeed posts={posts} />
 

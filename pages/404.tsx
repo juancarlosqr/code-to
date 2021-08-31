@@ -1,8 +1,11 @@
+import Metatags from '@/components/Metatags';
 import Link from 'next/link';
 
 export default function Custom404() {
   return (
     <main>
+      <Metatags title="404" />
+
       <h1>404 - That page does not seem to exist...</h1>
       <iframe
         src="https://giphy.com/embed/l2JehQ2GitHGdVG9y"
