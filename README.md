@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Links
 
 - http://localhost:3000
-- https://fireship.io/courses/react-next-firebase/admin-create-post/
+- https://fireship.io/courses/react-next-firebase/hearts-create/
 - https://console.firebase.google.com/u/3/project/code-nextjs/
 
 ## Getting Started
