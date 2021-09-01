@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import kebabCase from 'lodash.kebabcase';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import AuthCheck from '@/components/AuthCheck';
+import Metatags from '@/components/Metatags';
 import PostFeed from '@/components/PostFeed';
 import { db, ts } from '@/lib/firebase';
 import toaster from '@/lib/toaster';
@@ -13,6 +14,7 @@ const AdminPage = () => {
   return (
     <main>
       <AuthCheck>
+        <Metatags title="Manage posts" />
         <PostList />
         <CreateNewPost />
       </AuthCheck>
