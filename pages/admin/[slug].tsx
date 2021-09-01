@@ -12,6 +12,7 @@ const ReactMarkdown = dynamic(
 );
 
 import AuthCheck from '@/components/AuthCheck';
+import ImageUploader from '@/components/ImageUploader';
 import Metatags from '@/components/Metatags';
 import { db, auth, ts } from '@/lib/firebase';
 import toaster from '@/lib/toaster';
@@ -98,6 +99,8 @@ function PostForm({ defaultValues, postRef, preview }) {
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
+        <ImageUploader />
+
         <textarea
           {...register('content', {
             maxLength: { value: 20000, message: 'content is too long' },
