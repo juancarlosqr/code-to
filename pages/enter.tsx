@@ -21,11 +21,9 @@ const EnterPage = () => {
 
   return (
     <>
-      <Metatags title="Enter" description="Sign up for this amazing app!" />
+      <Metatags title="Enter" description="Sign up for code.to!" />
 
       <main>
-        <h1>Log In</h1>
-
         {user ? (
           username ? (
             <SignOutButton />

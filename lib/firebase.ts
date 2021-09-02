@@ -5,12 +5,12 @@ import 'firebase/storage';
 import { TSFixMe } from './types';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyASrAX5kGwlQjIRHyvK26DGiEZ7z1AJDE8',
-  authDomain: 'code-nextjs.firebaseapp.com',
-  projectId: 'code-nextjs',
-  storageBucket: 'code-nextjs.appspot.com',
-  messagingSenderId: '1086102071813',
-  appId: '1:1086102071813:web:4d69297515f7a4c2c1ca6c',
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
 };
 
 if (!firebase.apps.length) {

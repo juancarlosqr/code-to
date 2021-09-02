@@ -1,12 +1,13 @@
 {
-  "name": "code-nextjs",
-  "version": "0.1.0",
+  "name": "code-to",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy:rules": "firebase deploy --only firestore:rules"
+    "deploy:rules": "firebase deploy --only firestore:rules",
+    "deploy:storage": "firebase deploy --only storage:rules"
   },
   "dependencies": {
     "firebase": "^8.2.9",

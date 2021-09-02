@@ -2,7 +2,25 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
     match /{allPaths=**} {
-      allow read, write: if request.auth!=null;
+      allow read, write: if false;
+    }
+
+    match /uploads/{userId}/{imageId} {
+      allow read;
+      allow create: if canCreateImage(userId);
+      allow delete: if isOwner(userId);
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId
+    }
+
+    function canCreateImage(userId) {
+      // Only allow uploads of any image file that's less than 5MB
+      let isValidImage = request.resource.size < 5 * 1024 * 1024
+                         && request.resource.contentType.matches('image/.*');
+      
+      return isOwner(userId) && isValidImage;
     }
   }
 }
