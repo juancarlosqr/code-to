@@ -9,6 +9,7 @@ import { db, ts } from '@/lib/firebase';
 import toaster from '@/lib/toaster';
 import { useUser } from '@/providers/UserProvider';
 import styles from '../../styles/Admin.module.css';
+import { PostInterface } from '@/lib/types';
 
 const AdminPage = () => {
   return (
@@ -28,7 +29,7 @@ function PostList() {
   const query = ref.orderBy('createdAt');
   const [querySnapshot] = useCollection(query);
 
-  const posts = querySnapshot?.docs.map((doc) => doc.data());
+  const posts = querySnapshot?.docs.map((doc) => doc.data() as PostInterface);
 
   return (
     <>
