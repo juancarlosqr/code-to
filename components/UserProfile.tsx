@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { UserInterface } from '@/lib/types';
+import { PROFILE_IMAGE_BLUR_DATA } from '@/lib/constants';
 
 type UserProfileProps = {
   user: UserInterface;
@@ -8,7 +10,18 @@ type UserProfileProps = {
 const UserProfile = ({ user }: UserProfileProps) => {
   return (
     <div className="box-center">
-      <img src={user.photoURL || '/hacker.png'} className="card-img-center" />
+      <div className="image-center">
+        <Image
+          alt="Picture of the author"
+          src={user.photoURL || '/hacker.png'}
+          className="card-img-center"
+          height={150}
+          width={150}
+          layout="fixed"
+          placeholder="blur"
+          blurDataURL={PROFILE_IMAGE_BLUR_DATA}
+        />
+      </div>
       <p>
         <i>@{user.username}</i>
       </p>
