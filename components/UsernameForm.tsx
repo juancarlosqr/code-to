@@ -68,22 +68,21 @@ const UsernameForm = () => {
     }
   };
 
-  const checkUsername = useCallback(
-    debounce(async (choosenUsername: string) => {
-      if (choosenUsername.length >= USERNAME_MIN_LENGTH) {
-        const ref = db.doc(`usernames/${choosenUsername}`);
-        const { exists } = await ref.get();
-        console.log('Firestore read executed');
-        setIsValid(!exists);
-        setLoading(false);
-      }
-    }, 500),
-    []
-  );
+  const debounceCallback = debounce(async (choosenUsername: string) => {
+    if (choosenUsername.length >= USERNAME_MIN_LENGTH) {
+      const ref = db.doc(`usernames/${choosenUsername}`);
+      const { exists } = await ref.get();
+      console.log('Firestore read executed');
+      setIsValid(!exists);
+      setLoading(false);
+    }
+  }, 500);
+
+  const checkUsername = useCallback(debounceCallback, [debounceCallback]);
 
   useEffect(() => {
     checkUsername(value);
-  }, [value]);
+  }, [value, checkUsername]);
 
   return (
     !username && (

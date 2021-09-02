@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useUser } from '@/providers/UserProvider';
 import SignOutButton from './SignOut';
+import hackerImg from '../public/hacker.png';
 
 const Navbar = () => {
   const { user, username } = useUser();
@@ -18,17 +19,17 @@ const Navbar = () => {
         {username ? (
           <>
             <li className="push-left">
-              <SignOutButton />
-            </li>
-            <li>
               <Link href="/admin" passHref>
                 <button className="btn-blue">Write Posts</button>
               </Link>
             </li>
             <li>
+              <SignOutButton />
+            </li>
+            <li>
               <Link href={`/${username}`} passHref>
                 <Image
-                  src={user?.photoURL}
+                  src={user?.photoURL || hackerImg}
                   alt="Picture of the user"
                   height={50}
                   width={50}
