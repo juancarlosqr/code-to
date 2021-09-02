@@ -3,14 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useForm } from 'react-hook-form';
-// Work-around to make it work
-// More: https://github.com/vercel/next.js/issues/25454
-import dynamic from 'next/dynamic';
-const ReactMarkdown = dynamic(
-  () => import('react-markdown').then((module) => module.default),
-  { ssr: false }
-);
-
+import ReactMarkdown from 'react-markdown';
 import AuthCheck from '@/components/AuthCheck';
 import ImageUploader from '@/components/ImageUploader';
 import Metatags from '@/components/Metatags';
