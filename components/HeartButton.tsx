@@ -1,5 +1,5 @@
-import { db, auth, inc } from '@/lib/firebase';
 import { useDocument } from 'react-firebase-hooks/firestore';
+import { db, auth, inc } from '@/lib/firebase';
 
 // Allows user to heart or like a post
 export default function Heart({ postRef }) {
