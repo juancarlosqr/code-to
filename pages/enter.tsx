@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import Metatags from '@/components/Metatags';
 import SignOutButton from '@/components/SignOut';
 import UsernameForm from '@/components/UsernameForm';
 import { auth, googleOAuthProvider } from '@/lib/firebase';
 import { useUser } from '@/providers/UserProvider';
+import googleImg from '../public/google.png';
 
 const SignInButton = () => {
   const signInWithGoogle = async () => {
@@ -11,7 +13,8 @@ const SignInButton = () => {
 
   return (
     <button className="btn-google" onClick={signInWithGoogle}>
-      <img src="/google.png" alt="Google Sign In" /> Sign in with Google
+      <Image src={googleImg} alt="Google Sign In" height={30} width={30} /> Sign
+      in with Google
     </button>
   );
 };

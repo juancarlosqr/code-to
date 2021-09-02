@@ -1,11 +1,5 @@
 import Link from 'next/link';
-// Work-around to make it work
-// More: https://github.com/vercel/next.js/issues/25454
-import dynamic from 'next/dynamic';
-const ReactMarkdown = dynamic(
-  () => import('react-markdown').then((module) => module.default),
-  { ssr: false }
-);
+import ReactMarkdown from 'react-markdown';
 import { PostInterface } from '@/lib/types';
 
 // UI component for main post content
