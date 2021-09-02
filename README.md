@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - http://localhost:3000
 - https://fireship.io/courses/react-next-firebase/hearts-create/
 - https://console.firebase.google.com/u/3/project/code-nextjs/
+- https://app.splitbee.io/public/code-to.vercel.app
 
 ## Getting Started
 
