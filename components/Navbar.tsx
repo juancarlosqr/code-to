@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useUser } from '@/providers/UserProvider';
 import SignOutButton from './SignOut';
 
@@ -26,7 +27,12 @@ const Navbar = () => {
             </li>
             <li>
               <Link href={`/${username}`} passHref>
-                <img src={user?.photoURL} alt="" />
+                <Image
+                  src={user?.photoURL}
+                  alt="Picture of the user"
+                  height={50}
+                  width={50}
+                />
               </Link>
             </li>
           </>
