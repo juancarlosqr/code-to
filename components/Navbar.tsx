@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="navbar">
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/" passHref>
             <button className="btn-logo">CODE</button>
           </Link>
         </li>
@@ -20,19 +20,19 @@ const Navbar = () => {
               <SignOutButton />
             </li>
             <li>
-              <Link href="/admin">
+              <Link href="/admin" passHref>
                 <button className="btn-blue">Write Posts</button>
               </Link>
             </li>
             <li>
-              <Link href={`/${username}`}>
+              <Link href={`/${username}`} passHref>
                 <img src={user?.photoURL} alt="" />
               </Link>
             </li>
           </>
         ) : (
           <li>
-            <Link href="/enter">
+            <Link href="/enter" passHref>
               <button className="btn-blue">Log in</button>
             </Link>
           </li>
