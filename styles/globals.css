@@ -158,9 +158,12 @@ button.btn-google {
   color: var(--color-text);
 }
 
+.btn-google > div {
+  margin-right: 10px !important;
+}
+
 .btn-google img {
   width: 30px;
-  margin-right: 10px;
 }
 
 button.btn-logo {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { UserInterface } from '@/lib/types';
 import { PROFILE_IMAGE_BLUR_DATA } from '@/lib/constants';
+import hackerImg from '../public/hacker.png';
 
 type UserProfileProps = {
   user: UserInterface;
@@ -13,7 +14,7 @@ const UserProfile = ({ user }: UserProfileProps) => {
       <div className="image-center">
         <Image
           alt="Picture of the author"
-          src={user.photoURL || '/hacker.png'}
+          src={user.photoURL || hackerImg}
           className="card-img-center"
           height={150}
           width={150}
