@@ -153,16 +153,16 @@ button.btn-green {
   color: white;
 }
 
-button.btn-google {
+button.btn-auth {
   background-color: white;
   color: var(--color-text);
 }
 
-.btn-google > div {
+.btn-auth > div {
   margin-right: 10px !important;
 }
 
-.btn-google img {
+.btn-auth img {
   width: 30px;
 }
 
