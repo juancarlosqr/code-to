@@ -26,6 +26,7 @@ export const fromMillis = firebase.firestore.Timestamp.fromMillis;
 export const inc = firebase.firestore.FieldValue.increment;
 export const ts = firebase.firestore.FieldValue.serverTimestamp;
 export const googleOAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const githubOAuthProvider = new firebase.auth.GithubAuthProvider();
 export const STATE_CHANGED = firebase.storage.TaskEvent.STATE_CHANGED;
 
 /**
